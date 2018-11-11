@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\chain\Documents\GitHub\djangotest\myvenv"
+VIRTUAL_ENV="C:\Users\chain\Documents\GitHub\laika\myvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
