@@ -60,10 +60,10 @@ $ git clone https://github.com/ISPNearSpace/Laika.git
 $ cd Laika
 
 # Install dependencies
-$ npm i
+$ pip install -r requirements.txt
 
 # Run the app
-$ npm start
+$ python manage.py runserver
 ```
 
 ### Note: The website is hosted on localhost:4200
