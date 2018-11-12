@@ -1,341 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Laika - NSP Dashboard</title>
-		<!-- CSS FILES -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/css/uikit.min.css">
-		<link rel="stylesheet" type="text/css" href="static/css/dashboard.css">
-	</head>
-	<body>
-		<div class="uk-offcanvas-content">
-			<!--HEADER-->
-			<header id="top-head" class="uk-position-fixed">
-				<div class="uk-container uk-container-expand uk-background-primary">
-					<nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
-						<div class="uk-navbar-left">
-							<div class="uk-navbar-item uk-hidden@m">
-								<a class="uk-logo" href="#"><img class="custom-logo" src="static/img/dashboard-logo-white.svg" alt=""></a>
-							</div>
-							<ul class="uk-navbar-nav uk-visible@m">
-								<li><a href="#">Accounts</a></li>
-								<li>
-									<a href="#">Settings <span data-uk-icon="icon: triangle-down"></span></a>
-									<div class="uk-navbar-dropdown">
-										<ul class="uk-nav uk-navbar-dropdown-nav">
-											<li class="uk-nav-header">YOUR ACCOUNT</li>
-											<li><a href="#"><span data-uk-icon="icon: info"></span> Summary</a></li>
-											<li><a href="#"><span data-uk-icon="icon: refresh"></span> Edit</a></li>
-											<li><a href="#"><span data-uk-icon="icon: settings"></span> Configuration</a></li>
-											<li class="uk-nav-divider"></li>
-											<li><a href="#"><span data-uk-icon="icon: image"></span> Your Data</a></li>
-											<li class="uk-nav-divider"></li>
-											<li><a href="#"><span data-uk-icon="icon: sign-out"></span> Logout</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-							<div class="uk-navbar-item uk-visible@s">
-								<form action="dashboard.html" class="uk-search uk-search-default">
-									<span data-uk-search-icon></span>
-									<input class="uk-search-input search-field" type="search" placeholder="Search">
-								</form>
-							</div>
-						</div>
-						<div class="uk-navbar-right">
-							<ul class="uk-navbar-nav">
-								<li><a href="#" data-uk-icon="icon:user" title="Your profile" data-uk-tooltip></a></li>
-								<li><a href="#" data-uk-icon="icon: settings" title="Settings" data-uk-tooltip></a></li>
-								<li><a href="#" data-uk-icon="icon:  sign-out" title="Sign Out" data-uk-tooltip></a></li>
-								<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav" title="Offcanvas" data-uk-tooltip></a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</header>
-			<!--/HEADER-->
-			<!-- LEFT BAR -->
-			<aside id="left-col" class="uk-light uk-visible@m">
-				<div class="left-logo uk-flex uk-flex-middle">
-					<img class="custom-logo" src="static/img/dashboard-logo.svg" alt="">
-				</div>
-				<div class="left-content-box  content-box-dark">
-					<img src="static/img/avatar.svg" alt="" class="uk-border-circle profile-img">
-					<h4 class="uk-text-center uk-margin-remove-vertical text-light">John Doe</h4>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+    <head>
+        {% load static %}
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Laika - NSP Predictor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link rel="stylesheet" href="{% static 'predictor/t/css/base.css' %}"/>
+        <link rel="stylesheet" href="{% static 'predictor/css/skeleton.css' %}"/>
+        <link rel="stylesheet" href="{% static 'predictor/t/css/layout.css' %}"/>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{% static 'predictor/t/images/favicon.png' %}" />
+        <link rel="stylesheet" href="{% static 'predictor/css/burstcalc.css' %}"/>
+        <script type="text/javascript" src="{% static 'predictor/js/jquery-1.8.3-min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'predictor/js/jquery-color.js' %}"></script>
+        <script type="text/javascript" src="{% static 'predictor/js/jquery-mousewheel.js' %}"></script>
+        <script type="text/javascript" src="{% static 'predictor/js/jgestures.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'predictor/js/calc.js' %}"></script>
+    </head>
+    <body>
+    <header>
+        <div class="container">
+            <h1 class="no-margin">
+                <a href="http://habhub.org/">
+                    <img src="{% static 'predictor/t/images/habhub_logo.jpg' %}" alt="habhub" title="habhub"/>
+                </a>
+            </h1>
+            <span id="app_name"><b>burstcalc</b></span>
+        </div>
+    </header>
+    <div id="grey-section">
+        <div class="container">
+            <div class="column">
+                <h3 class="remove-bottom" id="page_title">Loading...</h3>
+                <p class="remove-bottom" id="page_subtitle">If you can read this, the javascript isn't working :-(.</p>
+            </div>
+        </div>
+    </div>
 
-					<div class="uk-position-relative uk-text-center uk-display-block">
-					    <a href="#" class="uk-text-small uk-text-muted uk-display-block uk-text-center" data-uk-icon="icon: triangle-down; ratio: 0.7">Admin</a>
-					    <!-- user dropdown -->
-					    <div class="uk-dropdown user-drop" data-uk-dropdown="mode: click; pos: bottom-center; animation: uk-animation-slide-bottom-small; duration: 150">
-					    	<ul class="uk-nav uk-dropdown-nav uk-text-left">
-									<li><a href="#"><span data-uk-icon="icon: info"></span> Summary</a></li>
-									<li><a href="#"><span data-uk-icon="icon: refresh"></span> Edit</a></li>
-									<li><a href="#"><span data-uk-icon="icon: settings"></span> Configuration</a></li>
-									<li class="uk-nav-divider"></li>
-									<li><a href="#"><span data-uk-icon="icon: image"></span> Your Data</a></li>
-									<li class="uk-nav-divider"></li>
-									<li><a href="#"><span data-uk-icon="icon: sign-out"></span> Sign Out</a></li>
-						    </ul>
-					    </div>
-					    <!-- /user dropdown -->
-					</div>
-				</div>
 
-				<div class="left-nav-wrap">
-					<ul class="uk-nav uk-nav-default uk-nav-parent-icon" data-uk-nav>
-						<li class="uk-nav-header">ACTIONS</li>
-						<li><a href="#"><span data-uk-icon="icon: comments" class="uk-margin-small-right"></span>Messages</a></li>
-						<li><a href="#"><span data-uk-icon="icon: users" class="uk-margin-small-right"></span>Friends</a></li>
-						<li class="uk-parent"><a href="#"><span data-uk-icon="icon: thumbnails" class="uk-margin-small-right"></span>Rooms</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Ipsum Dolor</a></li>
-								<li><a href="#">Officia deserunt</a></li>
-								<li><a href="#">Duis aute irure</a></li>
-								<li><a href="#">Ut enim ad minim</a></li>
-							</ul>
-						</li>
-						<li><a href="#"><span data-uk-icon="icon: album" class="uk-margin-small-right"></span>Albums</a></li>
-						<li><a href="#"><span data-uk-icon="icon: thumbnails" class="uk-margin-small-right"></span>Featured Content</a></li>
-						<li><a href="#"><span data-uk-icon="icon: lifesaver" class="uk-margin-small-right"></span>Emergency</a></li>
-						<li class="uk-parent">
-							<a href="#"><span data-uk-icon="icon: comments" class="uk-margin-small-right"></span>Reports</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Sub item</a></li>
-								<li><a href="#">Sub item</a></li>
-							</ul>
-						</li>
-					</ul>
-					<div class="left-content-box uk-margin-top">
+    <section id="main" class="container alpha">
+        <div id="helpbox" class="thirteen column" style="display: none">
+            <h2>Help</h2>
+            <p>
+                This calculator is designed to help you find how much gas to put into a high altitude balloon
+                to achieve a desired burst altitude or ascent rate. You have to know the payload mass (including
+                parachute) and balloon mass.
+            </p>
+            <p>
+                Usage is very straightforward: enter the payload mass into the first box, select the balloon
+                mass from the second box, and type in either a desired burst altitude in meters or ascent rate
+                in meters per second in the relevent box. Pressing enter or clicking away from the box you are
+                typing into will run the calculations, displaying the results in the box at the bottom.
+            </p>
+            <p>
+                The 'Constants' box can be used to adjust constants used by the calculator. These include
+                selecting a type of gas (or entering a custom gas density), adjusting modelling parameters
+                or entering a custom burst diameter or drag coefficient for your balloon. Click the tick box
+                next to the burst diameter or drag coefficient boxes to use a custom value, otherwise the
+                appropriate value for your selected balloon will be used.
+            </p>
+            <p>
+                <a href="#" class="close">Close</a>
+            </p>
+        </div>
 
-							<h5>Daily Reports</h5>
-							<div>
-								<span class="uk-text-small">Traffic <small>(+50)</small></span>
-								<progress class="uk-progress" value="50" max="100"></progress>
-							</div>
-							<div>
-								<span class="uk-text-small">Income <small>(+78)</small></span>
-								<progress class="uk-progress success" value="78" max="100"></progress>
-							</div>
-							<div>
-								<span class="uk-text-small">Feedback <small>(-12)</small></span>
-								<progress class="uk-progress warning" value="12" max="100"></progress>
-							</div>
+        <div id="aboutbox" class="thirteen column" style="display: none">
+            <h2>About</h2>
+            <p>
+                Cambridge University Space Flight: Balloon Burst Calculator <br>
+                <a href='https://github.com/cuspaceflight/cusf-burst-calc'>cusf-burst-calc on github</a>
+            </p>
+            <p>
+                An entirely javascript based, HTML5-valid, CSS-valid calculator to determine high altitude
+                balloon parameters.
+            </p>
+            <p>
+                The HTML and javascript was written by Adam Greig (<a href="http://www.cusf.co.uk">CUSF</a>)
+                and Rossen Georgiev; the first version in 2010 and a rewrite in 2012. This code is licensed
+                under the GPL (v3); see below. <br>
+                The design (<a href='https://github.com/ukhas/habitat-template.git'>habitat-template</a>; also GPL3)
+                was created by Daniel Saul and uses Skeleton CSS (MIT licensed). <br>
+                The underlying maths was derived from `burst1a` spreadsheet by Steve Randall and implemented
+                by Adam. <br>
+                It also contains Balloon information from Kaymont Totex sounding balloon data and Hwoyee.
+            </p>
+            <p>
+                No guarantee is given for the accuracy of any data included or produced by this program, use
+                at your own risk.
+            </p>
+            <p>
+                <a href="#" class="close">Close</a>
+            </p>
+        </div>
 
-					</div>
+        <div id="calcbox" class="fourteen columns alpha omega">
+            <div  class="fourteen columns alpha omega">
+                <div class="five columns alpha grey float first">
+                    <div class="sign"></div>
+                    <h4>Payload Mass (g)</h4>
+                    <input type="text" id="mp" class="input_field numeric scrollable" value="1500" data-step="5" tabindex="1"/>
+                    <h4>Balloon Mass (g)</h4>
+                    <select class="input_field" id="mb" tabindex="2">
+                        <option value="k200">Kaymont - 200</option>
+                        <option value="k300">Kaymont - 300</option>
+                        <option value="k350">Kaymont - 350</option>
+                        <option value="k450">Kaymont - 450</option>
+                        <option value="k500">Kaymont - 500</option>
+                        <option value="k600">Kaymont - 600</option>
+                        <option value="k700">Kaymont - 700</option>
+                        <option value="k800">Kaymont - 800</option>
+                        <option value="k1000" selected="selected">Kaymont - 1000</option>
+                        <option value="k1200">Kaymont - 1200</option>
+                        <option value="k1500">Kaymont - 1500</option>
+                        <option value="k2000">Kaymont - 2000</option>
+                        <option value="k3000">Kaymont - 3000</option>
+                        <option value="h100">Hwoyee - 100</option>
+                        <option value="h200">Hwoyee - 200</option>
+                        <option value="h300">Hwoyee - 300</option>
+                        <option value="h350">Hwoyee - 350</option>
+                        <option value="h400">Hwoyee - 400</option>
+                        <option value="h500">Hwoyee - 500</option>
+                        <option value="h600">Hwoyee - 600</option>
+                        <option value="h750">Hwoyee - 750</option>
+                        <option value="h800">Hwoyee - 800</option>
+                        <option value="h950">Hwoyee - 950</option>
+                        <option value="h1000">Hwoyee - 1000</option>
+                        <option value="h1200">Hwoyee - 1200</option>
+                        <option value="h1500">Hwoyee - 1500</option>
+                        <option value="h1600">Hwoyee - 1600</option>
+                        <option value="h2000">Hwoyee - 2000</option>
+                        <option value="h3000">Hwoyee - 3000</option>
+                        <option value="p100">Pawan - 100</option>
+                        <option value="p350">Pawan - 350</option>
+                        <option value="p600">Pawan - 600</option>
+                        <option value="p800">Pawan - 800</option>
+                        <option value="p900">Pawan - 900</option>
+                        <option value="p1200">Pawan - 1200</option>
+                        <option value="p1600">Pawan - 1600</option>
+                        <option value="p2000">Pawan - 2000</option>
+                    </select>
+                </div>
+                <div class="five columns alpha grey float second">
+                    <div class="sign"></div>
+                    <h4>Target Burst Altitude (m)</h4>
+                    <input type="text" id="tba" class="input_field numeric scrollable" data-step="100" value="33000" tabindex="3"/>
+                    <h4>Target Ascent rate (m/s)</h4>
+                    <input type="text" id="tar" class="input_field numeric scrollable" data-step="0.1" tabindex="4"/>
+                </div>
+                <div class="thirteen columns alpha grey third">
+                    <h4 id="result">Result</h4>
+                    <div class="three columns offset-by-one">
+                        <span class="output_label">Burst Altitude:</span>
+                        <span class="output_data" id="ba">33000 m</span>
+                        <span class="output_label">Ascent Rate:</span>
+                        <span class="output_data" id="ar">2.33 m/s</span>
+                    </div>
+                    <div class="three columns offset-by-one">
+                        <span class="output_label">Time to Burst:</span>
+                        <span class="output_data" id="ttb">238 min</span>
+                        <span class="output_label">Neck Lift:</span>
+                        <span class="output_data" id="nl">1733 g</span>
+                    </div>
+                    <div class="three columns offset-by-one">
+                        <span class="output_label">Volume:</span>
+                        <span class="output_data" id="lv_m3">2.66 m<sup>3</sup></span>
+                        <span class="output_label" id="lv_l" style="font-weight: bold;">2660 L</span>
+                        <span class="output_data" id="lv_cf">93.9 ft<sup>3</sup></span>
+                    </div>
+                </div>
+                <div class="thirteen columns alpha grey fourth closed">
+                    <h4>Constants (Advanced)</h4>
+                    <div class="columns four" style="display: none">
+                        <label class="constant_label" for="gas">Gas</label><br />
+                        <select id="gas" class="constant_field" autocomplete="off">
+                            <option value="he">Helium</option>
+                            <option value="h">Hydrogen</option>
+                            <option value="ch4">Methane</option>
+                            <option value="custom">Custom</option>
+                        </select><br />
+                        <label class="constant_label" for="rho_g">Gas Density (kg/m<sup>3</sup>)</label><br />
+                        <input type="text" id="rho_g" value="0.1786" class="constant_field" size="9" disabled="disabled"/><br />
+                    </div>
+                    <div class="columns four" style="display: none">
+                        <label class="constant_label" for="rho_a">Air Density (kg/m<sup>3</sup>)</label><br />
+                        <input type="text" id="rho_a" value="1.2050" class="constant_field numeric" autocomplete="off" size="9"/><br />
+                        <label class="constant_label" for="adm">Air Density Model</label><br />
+                        <input type="text" id="adm" value="7238.3" class="constant_field numeric" autocomplete="off" size="9"/><br />
+                        <label class="constant_label" for="ga">Gravitational<br />Acceleration (m/s<sup>2</sup>)</label><br />
+                        <input type="text" id="ga" value="9.80665" class="constant_field numeric" autocomplete="off" size="9" /><br />
+                    </div>
+                    <div class="columns four omega" style="display: none">
+                        <input type="checkbox" class="float" id="bd_c" autocomplete="off" />
+                        <label class="constant_label" for="bd">Burst Diameter (m)</label><br />
+                        <input type="text" id="bd" class="constant_field numeric scrollable" data-step="0.2" disabled="disabled" value="7.86" autocomplete="off" /><br />
+                        <input type="checkbox" class="float" id="cd_c" autocomplete="off" />
+                        <label class="constant_label" for="cd">Balloon Cd</label><br />
+                        <input type="text" id="cd" class="constant_field numeric scrollable" data-step="0.05" data-max="1" disabled="disabled" value="0.3" autocomplete="off" /><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				</div>
-				<div class="bar-bottom">
-					<ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5" data-uk-grid>
-						<li>
-							<a href="#" class="uk-icon-link" data-uk-icon="icon: home" title="Home" data-uk-tooltip></a>
-						</li>
-						<li>
-							<a href="#" class="uk-icon-link" data-uk-icon="icon: settings" title="Settings" data-uk-tooltip></a>
-						</li>
-						<li>
-							<a href="#" class="uk-icon-link" data-uk-icon="icon: social"  title="Social" data-uk-tooltip></a>
-						</li>
-
-						<li>
-							<a href="#" class="uk-icon-link" data-uk-tooltip="Sign out" data-uk-icon="icon: sign-out"></a>
-						</li>
-					</ul>
-				</div>
-			</aside>
-			<!-- /LEFT BAR -->
-			<!-- CONTENT -->
-			<div id="content" data-uk-height-viewport="expand: true">
-				<div class="uk-container uk-container-expand">
-					<div class="uk-grid uk-grid-divider uk-grid-medium uk-child-width-1-2 uk-child-width-1-4@l uk-child-width-1-5@xl" data-uk-grid>
-						<div>
-							<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary"></span>New Users</span>
-							<h1 class="uk-heading-primary uk-margin-remove  uk-text-primary">2.134</h1>
-							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: triangle-up">15%</span> more than last week.
-							</div>
-						</div>
-						<div>
-
-							<span class="uk-text-small"><span data-uk-icon="icon:social" class="uk-margin-small-right uk-text-primary"></span>Social Media</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">8.490</h1>
-							<div class="uk-text-small">
-								<span class="uk-text-warning" data-uk-icon="icon: triangle-down">-15%</span> less than last week.
-							</div>
-
-						</div>
-						<div>
-
-							<span class="uk-text-small"><span data-uk-icon="icon:clock" class="uk-margin-small-right uk-text-primary"></span>Traffic hours</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">12.00<small class="uk-text-small">PM</small></h1>
-							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: triangle-up"> 19%</span> more than last week.
-							</div>
-
-						</div>
-						<div>
-
-							<span class="uk-text-small"><span data-uk-icon="icon:search" class="uk-margin-small-right uk-text-primary"></span>Week Search</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">9.543</h1>
-							<div class="uk-text-small">
-								<span class="uk-text-danger" data-uk-icon="icon: triangle-down"> -23%</span> less than last week.
-							</div>
-
-						</div>
-						<div class="uk-visible@xl">
-							<span class="uk-text-small"><span data-uk-icon="icon:users" class="uk-margin-small-right uk-text-primary"></span>Lorem ipsum</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">5.284</h1>
-							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: triangle-up"> 7%</span> more than last week.
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="uk-grid uk-grid-medium" data-uk-grid>
-
-						<!-- panel -->
-						<div class="uk-width-1-2@l">
-							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
-								<div class="uk-card-header">
-									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Sales Chart</h4></div>
-										<div class="uk-width-expand uk-text-right panel-icons">
-											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
-											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
-											<a href="#" class="uk-icon-link" title="Close" data-uk-tooltip data-uk-icon="icon: close"></a>
-										</div>
-									</div>
-								</div>
-								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart2"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /panel -->
-						<!-- panel -->
-						<div class="uk-width-1-2@l">
-							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
-								<div class="uk-card-header">
-									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Predictions Chart</h4></div>
-										<div class="uk-width-expand uk-text-right panel-icons">
-											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
-											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
-											<a href="#" class="uk-icon-link" title="Close" data-uk-tooltip data-uk-icon="icon: close"></a>
-										</div>
-									</div>
-								</div>
-								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart1"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /panel -->
-						<!-- panel -->
-						<div class="uk-width-1-1 uk-width-1-3@l uk-width-1-2@xl">
-							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
-								<div class="uk-card-header">
-									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Activity Chart</h4></div>
-										<div class="uk-width-expand uk-text-right panel-icons">
-											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
-											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
-											<a href="#" class="uk-icon-link" title="Close" data-uk-tooltip data-uk-icon="icon: close"></a>
-										</div>
-									</div>
-								</div>
-								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart3"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /panel -->
-						<!-- panel -->
-						<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl">
-							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
-								<div class="uk-card-header">
-									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Distribution Chart</h4></div>
-										<div class="uk-width-expand uk-text-right panel-icons">
-											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
-											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
-											<a href="#" class="uk-icon-link" title="Close" data-uk-tooltip data-uk-icon="icon: close"></a>
-										</div>
-									</div>
-								</div>
-								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart4"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /panel -->
-						<!-- panel -->
-						<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl">
-							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
-								<div class="uk-card-header">
-									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Population Chart</h4></div>
-										<div class="uk-width-expand uk-text-right panel-icons">
-											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
-											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
-											<a href="#" class="uk-icon-link" title="Close" data-uk-tooltip data-uk-icon="icon: close"></a>
-										</div>
-									</div>
-								</div>
-								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart5"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /panel -->
-					</div>
-					<footer class="uk-section uk-section-small uk-text-center">
-						<hr>
-						<p class="uk-text-small uk-text-center">Copyright 2018 - <a href="https://github.com/zzseba78/Kick-Off">Created by KickOff</a> | Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a> </p>
-					</footer>
-				</div>
-			</div>
-			<!-- /CONTENT -->
-			<!-- OFFCANVAS -->
-			<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: true">
-				<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
-					<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
-					<ul class="uk-nav uk-nav-default">
-						<li class="uk-active"><a href="#">Active</a></li>
-						<li class="uk-parent">
-							<a href="#">Parent</a>
-							<ul class="uk-nav-sub">
-								<li><a href="#">Sub item</a></li>
-								<li><a href="#">Sub item</a></li>
-							</ul>
-						</li>
-						<li class="uk-nav-header">Header</li>
-						<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
-						<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
-						<li class="uk-nav-divider"></li>
-						<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li>
-					</ul>
-					<h3>Title</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				</div>
-			</div>
-			<!-- /OFFCANVAS -->
-		</div>
-
-		<!-- JS FILES -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/js/uikit.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/js/uikit-icons.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-		<script src="static/js/chartScripts.js"></script>
-	</body>
+    </body>
 </html>
