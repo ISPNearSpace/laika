@@ -138,12 +138,10 @@ Here is a brief explanation of the template folder structure and some of its mai
 ## Credits
 
 This software uses code from several open source packages.
-
-- [Nebular](https://akveo.github.io/nebular/)
-- [Node.js](https://nodejs.org/)
-- [Angular](https://angular.io/)
+- [CUSF] (http://www.cusf.co.uk/)
 - [HabHub](http://habhub.org/)
-- [Monchi Estevez](https://github.com/monchiestevez) - Developer and Founder
+- [Monchi Estevez](https://github.com/monchiestevez) - Dev and Founder
+- [Diego Estevez](https://github.com/diegoestevez) - Dev and Founder
 
 ## Contributing
 
