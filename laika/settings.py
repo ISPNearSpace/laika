@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'predictor',
-    'radar',
+    'live',
+    'mapbox',
+    'files',
 ]
 
 MIDDLEWARE = [
