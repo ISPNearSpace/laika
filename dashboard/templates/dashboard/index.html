@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="static/dashboard/css/dashboard.css">
 		<link rel="shortcut icon" type="image/png" href="static/dashboard/img/favicon.png"/>
+		<link rel="stylesheet" href="static/dashboard/css/style.css">
 	</head>
 	<body>
 		<div class="uk-offcanvas-content">
@@ -266,9 +267,22 @@
 									</div>
 								</div>
 								<div class="uk-card-body">
-									<div class="chart-container">
-										<canvas id="chart4"></canvas>
+									<div class="row" >
+										<div class="col-md-12" style="margin-bottom:10px;">
+											<h3 class="text-center text-primary">Enter your location</h3>
+											<span id="error" class="text-center"></span>
+										</div>
+
+										<div class="row form-group form-inline" id="cityDiv">
+
+											<input type="text" name="city" id="city" class="form-control" placeholder="Enter city name" >
+											<button id="submitCity" class="btn btn-primary">Search City</button>
+										</div>
+
 									</div>
+
+
+									<div id="showWeather"></div>
 								</div>
 							</div>
 						</div>
@@ -332,6 +346,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/js/uikit.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/js/uikit-icons.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="static/dashboard/js/chartScripts.js"></script>
+		<script src="static/dashboard/js/weather.js"></script>
 	</body>
 </html>
