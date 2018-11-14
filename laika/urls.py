@@ -5,11 +5,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('dashboard.urls')),
-    path('predictor/', include('predictor.urls')),
+    path('burst/', include('predictor.urls')),
     path('live/', include('live.urls')),
     path('mapbox/', include('mapbox.urls')),
     path('files/', include('files.urls')),
-    path('burst/', include('burst.urls')),
     path('landing/', include('landing.urls')),
     path('admin/', admin.site.urls),
 ]
