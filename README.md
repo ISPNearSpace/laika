@@ -131,7 +131,7 @@ Here is a brief explanation of the template folder structure and some of its mai
 ## Credits
 
 This software uses code from several open source packages.
-- [CUSF] (http://www.cusf.co.uk/)
+- [CUSF](http://www.cusf.co.uk/) - Cambridge University Spaceflight
 - [HabHub](http://habhub.org/)
 - [Monchi Estevez](https://github.com/monchiestevez) - Dev and Founder
 - [Diego Estevez](https://github.com/diegoestevez) - Dev and Founder
