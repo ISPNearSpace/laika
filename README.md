@@ -18,7 +18,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://i.gyazo.com/ed388bc12102b219a22f597950a09050.png)
+![screenshot](https://i.gyazo.com/0eed55ae3b1295c4afe604efcf439038.jpg)
 
 ## Key Features
 
