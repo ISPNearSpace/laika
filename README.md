@@ -65,66 +65,93 @@ $ python manage.py runserver
 Here is a brief explanation of the template folder structure and some of its main files usage:
 
 ```
-└── src                         # Contains all template source files.
-│   └── assets                  # Contains JS, CSS, images and icon fonts.
-│   │   └── scripts             # Contains all JavaScript files.
-│   │   │   └── charts          # Chart.js, Sparkline & Pie Chart plugins init.
-│   │   │   └── chat            # All chat app JS code.
-│   │   │   └── constants       # Template constant values like color values.
-│   │   │   └── datatable       # Date table plugin init.
-│   │   │   └── datepicker      # Bootstrap datepicker init.
-│   │   │   └── email           # All email app code.
-│   │   │   └── fullcalendar    # Fullcalendar plugin init.
-│   │   │   └── googleMaps      # Google maps API integration code.
-│   │   │   └── masonry         # Masonry layout code.
-│   │   │   └── popover         # Bootstrap popover plugin init.
-│   │   │   └── scrollbar       # Perfect scrollbar plugin init.
-│   │   │   └── search          # Topbar toggle search init.
-│   │   │   └── sidebar         # Sidebar JS code.
-│   │   │   └── skycons         # Animated icons plugin init.
-│   │   │   └── utils           # Basic utils used for proper rendering.
-│   │   │   └── vectorMaps      # Vector maps plugin init.
-│   │   │   └── index.js        # Indicator file.
-│   │   │
-│   │   └── static              # Contains the non-code files.
-│   │   │   └── fonts           # Contains icon fonts.
-│   │   │   └── images          # Contains all template images/svg.
-│   │   │
-│   │   └── styles              # Contains all SCSS files.
-│   │       └── spec            # Contains custom SCSS files.
-│   │       │   └── components  # Contains all template components.
-│   │       │   └── generic     # Contains basic scaffolding styles.
-│   │       │   └── screens     # Contains views specific styles.
-│   │       │   └── settings    # Contains all template variables.
-│   │       │   └── tools       # Contains all mixins.
-│   │       │   └── utils       # Contains helper classes.
-│   │       │   └── index.scss  # Indicator file.
-│   │       │
-│   │       └── vendor          # Contains all plugin files & custom styles.
-│   │       └── index.scss      # Indicator file.
-│   │
-│   └── *.html                  # All HTML pages files .
-└── webpack                     # Contains Webpack init code.
-│   └── plugins                 # Contains all Webpack plugins config.
-│   └── rules                   # Contains Loaders config code.
-│   └── config.js               # Contains Webpack config object.
-│   └── devServer.js            # Webpack dev server config code.
-│   └── manifest.js             # All build system constants.
+└── dashboard                   # dashboard app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for dashboard
+│   └── __init__.py             # init file for dashboard
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
 │
-└── .editorconfig               # Keep same coding styles between code editors.
-└── .gitattributes              # Git Attributes.
-└── .gitignore                  # Ignored files in Git.
-└── .stylelintrc.json           # SCSS/CSS Linting.
-└── .travis.yml                 # Travis file
-└── angular.json                # Angular main files
-└── karma.conf.js               # Configuration file for Karma and Angular
-└── browserslist                # Supported Browsers.
-└── package.json                # Package metadata.
-└── package-lock.json           # Exact tree that was generated for modules
-└── protractor.conf.json        # Config files for Protractor
-└── tsconfig.json               # TypeScript config
-└── README.md                   # Manual file.
-└── tslint.json                 # Extensible static analysis tool for TypeScript code
+└── files                       # dashboard app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for files
+│   └── __init__.py             # init file for files
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│
+└── home                        # restframework app
+│   │   └── migrations          # Folder for models migrations
+│   └── __init__.py             # init file for home
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│   └── serializers .py         # Django rest framework settings
+│
+└── landing                     # landing app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for landing
+│   └── __init__.py             # init file for landing
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│
+└── live                        # live app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for live
+│   └── __init__.py             # init file for live
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│
+└── mapbox                      # mapbox app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for mapbox
+│   └── __init__.py             # init file for mapbox
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│
+└── nsp                         # main project settings
+│   └── __init__.py             # all setings for project
+│   └── settings.py             # database models.
+│   └── urls.py                 # creates the urls and connects them to apps
+│   └── wsgi.py                 # not important rn
+│
+└── predictor                   # predictor app
+│   │   └── migrations          # Folder for models migrations
+│   │   └── static/predictor    # Static files
+│   │   └── templates/predictor # contains index file
+│   │   │   └── index.html      # Main html for predictor
+│   └── __init__.py             # init file for predictor
+│   └── apps.py                 # apps config file
+│   └── models.py               # database models.
+│   └── urls.py                 # url config for app
+│   └── views.py                # connects url to index file
+│
+└── .gitignore                  # Ignore specific files
+└── .manage.py                  # Django file that runs project
+└── requirements.txt            # Requirements that need to be installed to rundev
+└── runtime.txt                 # Heroku run file
+└── Procfile                    # details for heroku
+└── db.sqlite3                  # database
 └── LICENSE                     # License for project
 ```
 
