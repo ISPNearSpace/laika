@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		{% load static %}
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Laika - NSP Dashboard</title>
 		<!-- CSS FILES -->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/css/uikit.min.css">
-		<link rel="stylesheet" type="text/css" href="static/dashboard/css/dashboard.css">
-		<link rel="shortcut icon" type="image/png" href="static/dashboard/img/favicon.png"/>
-		<link rel="stylesheet" href="static/dashboard/css/style.css">
-		<link rel="stylesheet" href="static/dashboard/css/map.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/dashboard.css' %}">
+		<link rel="shortcut icon" type="image/png" href="{% static 'dashboard/img/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'dashboard/css/map.css' %}">
 	</head>
 	<body>
 		<div class="uk-offcanvas-content">
@@ -19,7 +20,7 @@
 					<nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
 						<div class="uk-navbar-left">
 							<div class="uk-navbar-item uk-hidden@m">
-								<a class="uk-logo" href="#"><img class="custom-logo" src="static/dashboard/img/dashboard-logo-white.svg" alt=""></a>
+								<a class="uk-logo" href="#"><img class="custom-logo" src="{% static 'dashboard/img/dashboard-logo-white.svg' %}" alt=""></a>
 							</div>
 							<ul class="uk-navbar-nav uk-visible@m">
 								<li><a href="#">Accounts</a></li>
@@ -61,10 +62,10 @@
 			<!-- LEFT BAR -->
 			<aside id="left-col" class="uk-light uk-visible@m">
 				<div class="left-logo uk-flex uk-flex-middle">
-					<img class="custom-logo" src="static/dashboard/img/dashboard-logo.svg" alt="">
+					<img class="custom-logo" src="{% static 'dashboard/img/dashboard-logo.svg' %}" alt="">
 				</div>
 				<div class="left-content-box  content-box-dark">
-					<img src="static/dashboard/img/avatar.svg" alt="" class="uk-border-circle profile-img">
+					<img src="{% static 'dashboard/img/avatar.svg' %}" alt="" class="uk-border-circle profile-img">
 					<h4 class="uk-text-center uk-margin-remove-vertical text-light">NSP Dashboard</h4>
 
 					<div class="uk-position-relative uk-text-center uk-display-block">
@@ -348,8 +349,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/js/uikit-icons.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="static/dashboard/js/chartScripts.js"></script>
-		<script src="static/dashboard/js/weather.js"></script>
-		<script src="static/dashboard/js/map.js"></script>
+		<script src="{% static 'dashboard/js/chartScripts.js' %}"></script>
+		<script src="{% static 'dashboard/js/weather.js' %}"></script>
+		<script src="{% static 'dashboard/js/map.js' %}"></script>
 	</body>
 </html>
