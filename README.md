@@ -20,6 +20,7 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
+  <a href="#Files/Folders-Structure">Files/Folders Structure</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
@@ -57,7 +58,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone https://github.com/ISPNearSpace/Laika.git
 
 # Go into the repository
-$ cd Laika
+$ cd laika
 
 # Install dependencies
 $ pip install -r requirements.txt
