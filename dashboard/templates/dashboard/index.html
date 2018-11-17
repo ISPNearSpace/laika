@@ -6,71 +6,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Laika - NSP Dashboard</title>
 		<!-- CSS FILES -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.20/css/uikit.min.css">
 		<link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/dashboard.css' %}">
 		<link rel="shortcut icon" type="image/png" href="{% static 'dashboard/img/favicon.png' %}"/>
-		<link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
 		<link rel="stylesheet" href="{% static 'dashboard/css/map.css' %}">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
 	</head>
 	<body>
 		<div class="uk-offcanvas-content">
-			<!--HEADER-->
-			<header id="top-head" class="uk-position-fixed">
-				<div class="uk-container uk-container-expand uk-background-primary">
-					<nav class="uk-navbar uk-light" data-uk-navbar="mode:click; duration: 250">
-						<div class="uk-navbar-left">
-							<div class="uk-navbar-item uk-hidden@m">
-								<a class="uk-logo" href="#"><img class="custom-logo" src="{% static 'dashboard/img/dashboard-logo-white.svg' %}" alt=""></a>
-							</div>
-							<ul class="uk-navbar-nav uk-visible@m">
-								<li><a href="#">Accounts</a></li>
-								<li>
-									<a href="#">Settings <span data-uk-icon="icon: triangle-down"></span></a>
-									<div class="uk-navbar-dropdown">
-										<ul class="uk-nav uk-navbar-dropdown-nav">
-											<li class="uk-nav-header">YOUR ACCOUNT</li>
-											<li><a href="#"><span data-uk-icon="icon: info"></span> Summary</a></li>
-											<li><a href="#"><span data-uk-icon="icon: refresh"></span> Edit</a></li>
-											<li><a href="#"><span data-uk-icon="icon: settings"></span> Configuration</a></li>
-											<li class="uk-nav-divider"></li>
-											<li><a href="#"><span data-uk-icon="icon: image"></span> Your Data</a></li>
-											<li class="uk-nav-divider"></li>
-											<li><a href="#"><span data-uk-icon="icon: sign-out"></span> Logout</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-							<div class="uk-navbar-item uk-visible@s">
-								<form action="dashboard.html" class="uk-search uk-search-default">
-									<span data-uk-search-icon></span>
-									<input class="uk-search-input search-field" type="search" placeholder="Search">
-								</form>
-							</div>
-						</div>
-						<div class="uk-navbar-right">
-							<ul class="uk-navbar-nav">
-								<li><a href="#" data-uk-icon="icon:user" title="Your profile" data-uk-tooltip></a></li>
-								<li><a href="#" data-uk-icon="icon: settings" title="Settings" data-uk-tooltip></a></li>
-								<li><a href="#" data-uk-icon="icon:  sign-out" title="Sign Out" data-uk-tooltip></a></li>
-								<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav" title="Offcanvas" data-uk-tooltip></a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</header>
-			<!--/HEADER-->
 			<!-- LEFT BAR -->
 			<aside id="left-col" class="uk-light uk-visible@m">
 				<div class="left-logo uk-flex uk-flex-middle">
 					<img class="custom-logo" src="{% static 'dashboard/img/dashboard-logo.svg' %}" alt="">
 				</div>
 				<div class="left-content-box  content-box-dark">
-					<img src="{% static 'dashboard/img/avatar.svg' %}" alt="" class="uk-border-circle profile-img">
 					<h4 class="uk-text-center uk-margin-remove-vertical text-light">NSP Dashboard</h4>
 
 					<div class="uk-position-relative uk-text-center uk-display-block">
-					    <a href="#" class="uk-text-small uk-text-muted uk-display-block uk-text-center" data-uk-icon="icon: triangle-down; ratio: 0.7">Admin</a>
-					    <!-- user dropdown -->
 					    <div class="uk-dropdown user-drop" data-uk-dropdown="mode: click; pos: bottom-center; animation: uk-animation-slide-bottom-small; duration: 150">
 					    	<ul class="uk-nav uk-dropdown-nav uk-text-left">
 									<li><a href="#"><span data-uk-icon="icon: info"></span> Summary</a></li>
@@ -82,7 +38,6 @@
 									<li><a href="#"><span data-uk-icon="icon: sign-out"></span> Sign Out</a></li>
 						    </ul>
 					    </div>
-					    <!-- /user dropdown -->
 					</div>
 				</div>
 
@@ -105,24 +60,6 @@
 						<li><a href="/files/"><span data-uk-icon="icon: album" class="uk-margin-small-right"></span>Files Received</a></li>
 						<li><a href="#"><span data-uk-icon="icon: lifesaver" class="uk-margin-small-right"></span>Emergency</a></li>
 					</ul>
-					<div class="left-content-box uk-margin-top">
-
-							<h5>Mission Report</h5>
-							<div>
-								<span class="uk-text-small">Files Traffic <small>(+50)</small></span>
-								<progress class="uk-progress" value="50" max="100"></progress>
-							</div>
-							<div>
-								<span class="uk-text-small">Income <small>(+78)</small></span>
-								<progress class="uk-progress success" value="78" max="100"></progress>
-							</div>
-							<div>
-								<span class="uk-text-small">Feedback <small>(-12)</small></span>
-								<progress class="uk-progress warning" value="12" max="100"></progress>
-							</div>
-
-					</div>
-
 				</div>
 				<div class="bar-bottom">
 					<ul class="uk-subnav uk-flex uk-flex-center uk-child-width-1-5" data-uk-grid>
@@ -157,27 +94,18 @@
 						<div>
 
 							<span class="uk-text-small"><span data-uk-icon="icon:rss" class="uk-margin-small-right uk-text-primary"></span>Sensors</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">7/8</h1>
+							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">3/3</h1>
 							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: info"></span> 7 out of 8 modules working
+								<span class="uk-text-success" data-uk-icon="icon: info"></span> All modules working
 							</div>
 
 						</div>
 						<div>
 
 							<span class="uk-text-small"><span data-uk-icon="icon:location" class="uk-margin-small-right uk-text-primary"></span>GPS</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">40.741895,-73.989308<small class="uk-text-small">PM</small></h1>
+							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">40.7,-73.9<small class="uk-text-small">PM</small></h1>
 							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: info"></span> Capsule over *insert place here*
-							</div>
-
-						</div>
-						<div>
-
-							<span class="uk-text-small"><span data-uk-icon="icon:video-camera" class="uk-margin-small-right uk-text-primary"></span>Camera</span>
-							<h1 class="uk-heading-primary uk-margin-remove uk-text-primary">Working</h1>
-							<div class="uk-text-small">
-								<span class="uk-text-success" data-uk-icon="icon: info"></span> Receiving  pictures.
+								<span class="uk-text-success" data-uk-icon="icon: info"></span> Capsule over
 							</div>
 
 						</div>
@@ -197,7 +125,7 @@
 							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
 								<div class="uk-card-header">
 									<div class="uk-grid uk-grid-small">
-										<div class="uk-width-auto"><h4>Sales Chart</h4></div>
+										<div class="uk-width-auto uk-hidden"><h4>Sales Chart</h4></div>
 										<div class="uk-width-expand uk-text-right panel-icons">
 											<a href="#" class="uk-icon-link" title="Move" data-uk-tooltip data-uk-icon="icon: move"></a>
 											<a href="#" class="uk-icon-link" title="Configuration" data-uk-tooltip data-uk-icon="icon: cog"></a>
@@ -214,7 +142,7 @@
 						</div>
 						<!-- /panel -->
 						<!-- panel -->
-						<div class="uk-width-1-2@l">
+						<div class="uk-width-1-2@l uk-hidden">
 							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
 								<div class="uk-card-header">
 									<div class="uk-grid uk-grid-small">
@@ -290,7 +218,7 @@
 						</div>
 						<!-- /panel -->
 						<!-- panel -->
-						<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl">
+						<div class="uk-width-1-2@s uk-width-1-3@l uk-width-1-4@xl uk-hidden">
 							<div class="uk-card uk-card-default uk-card-small uk-card-hover">
 								<div class="uk-card-header">
 									<div class="uk-grid uk-grid-small">
